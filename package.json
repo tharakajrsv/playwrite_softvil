@@ -10,7 +10,7 @@
     "tag:regression":"npx cucumber-js",
     "tag:sanity":"npm run clean:allure && npx cucumber-js --tags \"@sanity\"",       
     "test": "npm run clean:allure && npx cucumber-js --tags \"@test\"",
-    "generate-report": "allure generate ./allure-results --clean",
+    "generate-report": "allure generate ./allure-results --clean -o ./docs",
     "open-report": "allure open"
   },
   "keywords": [],
