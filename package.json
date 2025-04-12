@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:allure": "rimraf allure-results",
+    "clean:allure": "rmdir /s /q allure-results",
     "tag:organization": "npm run clean:allure && npx cucumber-js --tags \"@organization\"",
     "tag:admin": "npm run clean:allure && npx cucumber-js --tags \"@admin\"",
     "tag:user": "npm run clean:allure && npx cucumber-js --tags \"@user\"",
