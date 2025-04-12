@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:allure": "if not exist allure-results mkdir allure-results && rd /s /q allure-results",
-    "tag:organization":"npm run clean:allure && npx cucumber-js --tags \"@organization\"",
-    "tag:admin":"npm run clean:allure && npx cucumber-js --tags \"@admin\"",
-    "tag:user":"npm run clean:allure && npx cucumber-js --tags \"@user\"",
-    "tag:regression":"npx cucumber-js",
-    "tag:sanity":"npm run clean:allure && npx cucumber-js --tags \"@sanity\"",       
+    "clean:allure": "rimraf allure-results",
+    "tag:organization": "npm run clean:allure && npx cucumber-js --tags \"@organization\"",
+    "tag:admin": "npm run clean:allure && npx cucumber-js --tags \"@admin\"",
+    "tag:user": "npm run clean:allure && npx cucumber-js --tags \"@user\"",
+    "tag:regression": "npx cucumber-js",
+    "tag:sanity": "npm run clean:allure && npx cucumber-js --tags \"@sanity\"",
     "test": "npm run clean:allure && npx cucumber-js --tags \"@test\"",
     "generate-report": "allure generate ./allure-results --clean -o ./docs",
     "open-report": "allure open"
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^11.2.0",
     "allure-commandline": "^2.32.2",
-    "allure-cucumberjs": "^3.1.0"
+    "allure-cucumberjs": "^3.1.0",
+    "rimraf": "^6.0.1"
   }
 }
